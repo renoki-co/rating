@@ -20,12 +20,12 @@ trait CanBeRated
 
     /**
      * Calculate the average rating of the current model.
-     * 
-     * @return float The average rating. 
+     *
+     * @return float The average rating.
      */
     public function averageRating($model = null)
     {
-        if($this->raters($model)->count() == 0) {
+        if ($this->raters($model)->count() == 0) {
             return 0.00;
         }
 
