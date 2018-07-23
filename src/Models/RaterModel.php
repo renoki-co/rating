@@ -4,7 +4,7 @@ namespace Rennokki\Rating\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class RatingModel extends Model
+class RaterModel extends Model
 {
     protected $table = 'ratings';
     protected $fillable = [
