@@ -1,0 +1,13 @@
+<?php
+
+return [
+
+    /*
+     * The models for rating tables.
+     */
+
+    'models' => [
+        'rating' => \Rennokki\Rating\Models\RatingModel::class,
+    ],
+
+];
