@@ -3,7 +3,7 @@
 namespace Rennokki\Rating\Test;
 
 use Rennokki\Rating\Test\Models\User;
-use Rennokki\Rating\Models\RatingModel;
+use Rennokki\Rating\Models\RaterModel;
 use Rennokki\Rating\Test\Models\Pages;
 use Orchestra\Testbench\TestCase as Orchestra;
 
@@ -41,7 +41,7 @@ abstract class TestCase extends Orchestra
         $app['config']->set('auth.providers.users.model', User::class);
         $app['config']->set('auth.providers.pages.model', Page::class);
         $app['config']->set('app.key', 'wslxrEFGWY6GfGhvN9L3wH3KSRJQQpBD');
-        $app['config']->set('rating.models.rating', RatingModel::class);
+        $app['config']->set('rating.models.rating', RaterModel::class);
     }
 
     protected function resetDatabase()

@@ -7,7 +7,7 @@ return [
      */
 
     'models' => [
-        'rating' => \Rennokki\Rating\Models\RatingModel::class,
+        'rating' => \Rennokki\Rating\Models\RaterModel::class,
     ],
 
 ];
