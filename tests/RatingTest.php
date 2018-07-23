@@ -184,7 +184,7 @@ class RatingTest extends TestCase
     public function testAverageRating4()
     {
         $this->user->rate($this->page, 1.00);
-        $this->user2->rate($this->page, 2.00);;
+        $this->user2->rate($this->page, 2.00);
 
         $this->assertEquals($this->page->averageRating(), 0.00);
         $this->assertEquals($this->page->averageRating(User::class), 1.50);
@@ -197,7 +197,7 @@ class RatingTest extends TestCase
         $this->user3->rate($this->page, 10.00);
 
         $this->assertEquals($this->page->averageRating(), 0.00);
-        $this->assertEquals($this->page->averageRating(User::class), (12.00/3));
+        $this->assertEquals($this->page->averageRating(User::class), (12.00 / 3));
     }
 
     public function testAverageRating6()
@@ -207,6 +207,6 @@ class RatingTest extends TestCase
         $this->user3->rate($this->page, 5.77);
 
         $this->assertEquals($this->page->averageRating(), 0.00);
-        $this->assertEquals($this->page->averageRating(User::class), ((7.43+3.15+5.77)/3));
+        $this->assertEquals($this->page->averageRating(User::class), ((7.43 + 3.15 + 5.77) / 3));
     }
 }
