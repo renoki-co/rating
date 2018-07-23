@@ -73,10 +73,10 @@ $page = Page::find(1);
 
 $user->rate($page, 10);
 $user->hasRated($page); // true
-$page->averageRating(); // 10.0, as float
+$page->averageRating(User::class); // 10.0, as float
 ```
 
-As a second argument, you can pass the rating score. It can either be string, integer or float.
+As a second argument to the `rate()` method, you can pass the rating score. It can either be string, integer or float.
 
 To update a rating, you can call `updateRatingFor()` method:
 ```php
