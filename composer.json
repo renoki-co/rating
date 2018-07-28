@@ -1,6 +1,6 @@
 {
     "name": "rennokki/rating",
-    "description": "Laravel Eloquent Rating is a simple rating system which can be implemented on any model.",
+    "description": "Laravel Eloquent Rating allows you to assign ratings to any model.",
     "keywords": [
         "eloquent",
         "laravel",
