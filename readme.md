@@ -9,7 +9,7 @@
 [![PayPal](https://img.shields.io/badge/PayPal-donate-blue.svg)](https://paypal.me/rennokki)
 
 # Laravel Eloquent Rating
-Laravel Eloquent Rating allows you to assign ratings to any model. Currently, only Average Rating can be used.
+Laravel Eloquent Rating allows you to assign ratings to any model.
 
 # Installation
 Install the package:
