@@ -10,6 +10,10 @@ class RaterModel extends Model
     protected $fillable = [
         'rateable_id', 'rateable_type',
         'rater_id', 'rater_type',
+        'rating',
+    ];
+    protected $casts = [
+        'rating' => 'float',
     ];
 
     public function rateable()

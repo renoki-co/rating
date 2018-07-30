@@ -27,7 +27,7 @@ trait CanRate
      * @param Model $model The model which will be checked against.
      * @return bool
      */
-    public function hasRated($model)
+    public function hasRated($model): bool
     {
         if (! $model instanceof Rater && ! $model instanceof Rating) {
             return false;
@@ -43,7 +43,7 @@ trait CanRate
      * @param float $rate The rate amount.
      * @return bool
      */
-    public function rate($model, $rating)
+    public function rate($model, $rating): bool
     {
         if (! $model instanceof Rater && ! $model instanceof Rating) {
             return false;
@@ -70,7 +70,7 @@ trait CanRate
      * @param float $rate The rate amount.
      * @return bool
      */
-    public function updateRatingFor($model, $newRating)
+    public function updateRatingFor($model, $newRating): bool
     {
         if (! $model instanceof Rater && ! $model instanceof Rating) {
             return false;
@@ -91,7 +91,7 @@ trait CanRate
      * @param Model $model The model which will be unrated.
      * @return bool
      */
-    public function unrate($model)
+    public function unrate($model): bool
     {
         if (! $model instanceof Rater && ! $model instanceof Rating) {
             return false;
