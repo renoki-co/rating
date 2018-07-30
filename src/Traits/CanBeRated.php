@@ -23,10 +23,10 @@ trait CanBeRated
      *
      * @return float The average rating.
      */
-    public function averageRating($model = null)
+    public function averageRating($model = null): float
     {
         if ($this->raters($model)->count() == 0) {
-            return 0.00;
+            return (float) 0.00;
         }
 
         return (float) $this->raters($model)->avg('rating');
