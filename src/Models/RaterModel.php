@@ -7,11 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class RaterModel extends Model
 {
     protected $table = 'ratings';
-    protected $fillable = [
-        'rateable_id', 'rateable_type',
-        'rater_id', 'rater_type',
-        'rating',
-    ];
+    protected $guarded = [];
     protected $casts = [
         'rating' => 'float',
     ];
