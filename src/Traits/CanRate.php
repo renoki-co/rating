@@ -77,7 +77,7 @@ trait CanRate
         }
 
         if (! $this->hasRated($model)) {
-            return $this->rate($mode, $newRating);
+            return $this->rate($model, $newRating);
         }
 
         $this->unrate($model);
