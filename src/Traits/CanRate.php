@@ -3,7 +3,7 @@
 namespace Rennokki\Rating\Traits;
 
 use Rennokki\Rating\Contracts\Rater;
-use Rennokki\Rating\Contracts\Rating;
+use Rennokki\Rating\Contracts\Rateable;
 
 trait CanRate
 {
@@ -29,7 +29,7 @@ trait CanRate
      */
     public function hasRated($model): bool
     {
-        if (! $model instanceof Rater && ! $model instanceof Rating) {
+        if (! $model instanceof Rateable && ! $this instanceof Rater) {
             return false;
         }
 
@@ -45,7 +45,7 @@ trait CanRate
      */
     public function rate($model, $rating): bool
     {
-        if (! $model instanceof Rater && ! $model instanceof Rating) {
+        if (! $model instanceof Rateable && ! $this instanceof Rater) {
             return false;
         }
 
@@ -72,12 +72,12 @@ trait CanRate
      */
     public function updateRatingFor($model, $newRating): bool
     {
-        if (! $model instanceof Rater && ! $model instanceof Rating) {
+        if (! $model instanceof Rateable && ! $this instanceof Rater) {
             return false;
         }
 
         if (! $this->hasRated($model)) {
-            return $this->rate($mode, $newRating);
+            return $this->rate($model, $newRating);
         }
 
         $this->unrate($model);
@@ -93,7 +93,7 @@ trait CanRate
      */
     public function unrate($model): bool
     {
-        if (! $model instanceof Rater && ! $model instanceof Rating) {
+        if (! $model instanceof Rateable && ! $this instanceof Rater) {
             return false;
         }
 
