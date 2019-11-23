@@ -10,8 +10,8 @@ trait CanRate
     /**
      * Relationship for models that this model currently rated.
      *
-     * @param Model $model The model types of the results.
-     * @return morphToMany The relationship.
+     * @param  null|\Illuminate\Database\Eloquent\Model  $model
+     * @return mixed
      */
     public function ratings($model = null)
     {
@@ -24,7 +24,7 @@ trait CanRate
     /**
      * Check if the current model is rating another model.
      *
-     * @param Model $model The model which will be checked against.
+     * @param  \Illuminate\Database\Eloquent\Model  $model
      * @return bool
      */
     public function hasRated($model): bool
@@ -39,8 +39,8 @@ trait CanRate
     /**
      * Rate a certain model.
      *
-     * @param Model $model The model which will be rated.
-     * @param float $rate The rate amount.
+     * @param  \Illuminate\Database\Eloquent\Model  $model
+     * @param  float  $rating
      * @return bool
      */
     public function rate($model, $rating): bool
@@ -64,10 +64,10 @@ trait CanRate
     }
 
     /**
-     * Rate a certain model.
+     * Update the rating for a model
      *
-     * @param Model $model The model which will be rated.
-     * @param float $rate The rate amount.
+     * @param  \Illuminate\Database\Eloquent\Model  $model
+     * @param  float  $newRating
      * @return bool
      */
     public function updateRatingFor($model, $newRating): bool
@@ -88,7 +88,7 @@ trait CanRate
     /**
      * Unrate a certain model.
      *
-     * @param Model $model The model which will be unrated.
+     * @param  \Illuminate\Database\Eloquent\Model  $model
      * @return bool
      */
     public function unrate($model): bool
