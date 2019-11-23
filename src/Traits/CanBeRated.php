@@ -7,25 +7,28 @@ trait CanBeRated
     /**
      * Relationship for models that rated this model.
      *
-     * @param Model $model The model types of the results.
-     * @return morphToMany The relationship.
+     * @param  null|\Illuminate\Database\Eloquent\Model  $model
+     * @return mixed
      */
     public function raters($model = null)
     {
-        return $this->morphToMany(($model) ?: $this->getMorphClass(), 'rateable', 'ratings', 'rateable_id', 'rater_id')
+        $modelClass = $model ? (new $model)->getMorphClass() : $this->getMorphClass();
+
+        return $this->morphToMany($modelClass, 'rateable', 'ratings', 'rateable_id', 'rater_id')
                     ->withPivot('rater_type', 'rating')
-                    ->wherePivot('rater_type', ($model) ?: $this->getMorphClass())
+                    ->wherePivot('rater_type', $modelClass)
                     ->wherePivot('rateable_type', $this->getMorphClass());
     }
 
     /**
      * Calculate the average rating of the current model.
      *
-     * @return float The average rating.
+     * @param  null|\Illuminate\Database\Eloquent\Model  $model
+     * @return float
      */
     public function averageRating($model = null): float
     {
-        if ($this->raters($model)->count() == 0) {
+        if ($this->raters($model)->count() === 0) {
             return (float) 0.00;
         }
 

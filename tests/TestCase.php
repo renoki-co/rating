@@ -2,14 +2,13 @@
 
 namespace Rennokki\Rating\Test;
 
-use Rennokki\Rating\Test\Models\User;
-use Rennokki\Rating\Models\RaterModel;
-use Rennokki\Rating\Test\Models\Pages;
 use Orchestra\Testbench\TestCase as Orchestra;
+use Rennokki\Rating\Models\RaterModel;
+use Rennokki\Rating\Test\Models\User;
 
 abstract class TestCase extends Orchestra
 {
-    public function setUp()
+    public function setUp(): void
     {
         parent::setUp();
 

@@ -10,21 +10,23 @@ trait CanRate
     /**
      * Relationship for models that this model currently rated.
      *
-     * @param Model $model The model types of the results.
-     * @return morphToMany The relationship.
+     * @param  null|\Illuminate\Database\Eloquent\Model  $model
+     * @return mixed
      */
     public function ratings($model = null)
     {
-        return $this->morphToMany(($model) ?: $this->getMorphClass(), 'rater', 'ratings', 'rater_id', 'rateable_id')
+        $modelClass = $model ? (new $model)->getMorphClass() : $this->getMorphClass();
+
+        return $this->morphToMany($modelClass, 'rater', 'ratings', 'rater_id', 'rateable_id')
                     ->withPivot('rateable_type', 'rating')
-                    ->wherePivot('rateable_type', ($model) ?: $this->getMorphClass())
+                    ->wherePivot('rateable_type', $modelClass)
                     ->wherePivot('rater_type', $this->getMorphClass());
     }
 
     /**
      * Check if the current model is rating another model.
      *
-     * @param Model $model The model which will be checked against.
+     * @param  \Illuminate\Database\Eloquent\Model  $model
      * @return bool
      */
     public function hasRated($model): bool
@@ -33,17 +35,17 @@ trait CanRate
             return false;
         }
 
-        return (bool) ! is_null($this->ratings($model->getMorphClass())->find($model->getKey()));
+        return ! is_null($this->ratings($model->getMorphClass())->find($model->getKey()));
     }
 
     /**
      * Rate a certain model.
      *
-     * @param Model $model The model which will be rated.
-     * @param float $rate The rate amount.
+     * @param  \Illuminate\Database\Eloquent\Model  $model
+     * @param  float  $rating
      * @return bool
      */
-    public function rate($model, $rating): bool
+    public function rate($model, float $rating): bool
     {
         if (! $model instanceof Rater && ! $model instanceof Rating) {
             return false;
@@ -57,17 +59,17 @@ trait CanRate
             'rater_id' => $this->getKey(),
             'rateable_type' => $model->getMorphClass(),
             'rateable_id' => $model->getKey(),
-            'rating' => (float) $rating,
+            'rating' => $rating,
         ]);
 
         return true;
     }
 
     /**
-     * Rate a certain model.
+     * Update the rating for a model.
      *
-     * @param Model $model The model which will be rated.
-     * @param float $rate The rate amount.
+     * @param  \Illuminate\Database\Eloquent\Model  $model
+     * @param  float  $newRating
      * @return bool
      */
     public function updateRatingFor($model, $newRating): bool
@@ -77,7 +79,7 @@ trait CanRate
         }
 
         if (! $this->hasRated($model)) {
-            return $this->rate($mode, $newRating);
+            return $this->rate($model, $newRating);
         }
 
         $this->unrate($model);
@@ -88,7 +90,7 @@ trait CanRate
     /**
      * Unrate a certain model.
      *
-     * @param Model $model The model which will be unrated.
+     * @param  \Illuminate\Database\Eloquent\Model  $model
      * @return bool
      */
     public function unrate($model): bool
