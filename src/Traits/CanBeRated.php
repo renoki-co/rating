@@ -12,9 +12,11 @@ trait CanBeRated
      */
     public function raters($model = null)
     {
-        return $this->morphToMany(($model) ?: $this->getMorphClass(), 'rateable', 'ratings', 'rateable_id', 'rater_id')
+        $modelClass = $model ? (new $model)->getMorphClass() : $this->getMorphClass();
+
+        return $this->morphToMany($modelClass, 'rateable', 'ratings', 'rateable_id', 'rater_id')
                     ->withPivot('rater_type', 'rating')
-                    ->wherePivot('rater_type', ($model) ?: $this->getMorphClass())
+                    ->wherePivot('rater_type', $modelClass)
                     ->wherePivot('rateable_type', $this->getMorphClass());
     }
 
