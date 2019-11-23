@@ -28,7 +28,7 @@ trait CanBeRated
      */
     public function averageRating($model = null): float
     {
-        if ($this->raters($model)->count() == 0) {
+        if ($this->raters($model)->count() === 0) {
             return (float) 0.00;
         }
 
