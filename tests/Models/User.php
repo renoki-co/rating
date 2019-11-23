@@ -2,10 +2,10 @@
 
 namespace Rennokki\Rating\Test\Models;
 
-use Rennokki\Rating\Traits\CanRate;
+use Illuminate\Foundation\Auth\User as Authenticatable;
 use Rennokki\Rating\Contracts\Rating;
 use Rennokki\Rating\Traits\CanBeRated;
-use Illuminate\Foundation\Auth\User as Authenticatable;
+use Rennokki\Rating\Traits\CanRate;
 
 class User extends Authenticatable implements Rating
 {

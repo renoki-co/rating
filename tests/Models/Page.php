@@ -2,10 +2,10 @@
 
 namespace Rennokki\Rating\Test\Models;
 
-use Rennokki\Rating\Traits\CanRate;
+use Illuminate\Database\Eloquent\Model;
 use Rennokki\Rating\Contracts\Rating;
 use Rennokki\Rating\Traits\CanBeRated;
-use Illuminate\Database\Eloquent\Model;
+use Rennokki\Rating\Traits\CanRate;
 
 class Page extends Model implements Rating
 {

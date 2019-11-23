@@ -30,7 +30,7 @@ interface Rater
     public function rate($model, float $rating): bool;
 
     /**
-     * Update the rating for a model
+     * Update the rating for a model.
      *
      * @param  \Illuminate\Database\Eloquent\Model  $model
      * @param  float  $newRating
