@@ -1,4 +1,7 @@
 <?php
+
+use Illuminate\Support\Str;
+
 /*
 |--------------------------------------------------------------------------
 | Model Factories
@@ -12,6 +15,6 @@
 
 $factory->define(\Rennokki\Rating\Test\Models\SimplePage::class, function () {
     return [
-        'name' => 'Page'.str_random(5),
+        'name' => 'Page'.Str::random(5),
     ];
 });
