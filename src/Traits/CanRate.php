@@ -35,7 +35,7 @@ trait CanRate
             return false;
         }
 
-        return (bool) ! is_null($this->ratings($model->getMorphClass())->find($model->getKey()));
+        return ! is_null($this->ratings($model->getMorphClass())->find($model->getKey()));
     }
 
     /**
@@ -45,7 +45,7 @@ trait CanRate
      * @param  float  $rating
      * @return bool
      */
-    public function rate($model, $rating): bool
+    public function rate($model, float $rating): bool
     {
         if (! $model instanceof Rater && ! $model instanceof Rating) {
             return false;
@@ -59,7 +59,7 @@ trait CanRate
             'rater_id' => $this->getKey(),
             'rateable_type' => $model->getMorphClass(),
             'rateable_id' => $model->getKey(),
-            'rating' => (float) $rating,
+            'rating' => $rating,
         ]);
 
         return true;
