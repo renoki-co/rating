@@ -3,7 +3,6 @@
 namespace Rennokki\Rating\Traits;
 
 use Rennokki\Rating\Contracts\Rateable;
-use Rennokki\Rating\Contracts\Rater;
 use Rennokki\Rating\Contracts\Rating;
 
 trait CanRate
