@@ -42,7 +42,7 @@ abstract class TestCase extends Orchestra
 
     /**
      * Set up the environment.
-     * 
+     *
      * @param  mixed  $app
      * @return void
      */
