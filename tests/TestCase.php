@@ -8,6 +8,11 @@ use Rennokki\Rating\Test\Models\User;
 
 abstract class TestCase extends Orchestra
 {
+    /**
+     * Set up the tests.
+     *
+     * @return void
+     */
     public function setUp(): void
     {
         parent::setUp();
@@ -22,6 +27,12 @@ abstract class TestCase extends Orchestra
         $this->artisan('migrate', ['--database' => 'sqlite']);
     }
 
+    /**
+     * Get the package providers for tests.
+     *
+     * @param  mixed  $app
+     * @return array
+     */
     protected function getPackageProviders($app)
     {
         return [
@@ -29,6 +40,12 @@ abstract class TestCase extends Orchestra
         ];
     }
 
+    /**
+     * Set up the environment.
+     * 
+     * @param  mixed  $app
+     * @return void
+     */
     public function getEnvironmentSetUp($app)
     {
         $app['config']->set('database.default', 'sqlite');
@@ -43,6 +60,11 @@ abstract class TestCase extends Orchestra
         $app['config']->set('rating.models.rating', RaterModel::class);
     }
 
+    /**
+     * Reset the database.
+     *
+     * @return void
+     */
     protected function resetDatabase()
     {
         file_put_contents(__DIR__.'/database.sqlite', null);
