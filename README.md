@@ -1,5 +1,5 @@
 ![CI](https://github.com/renoki-co/rating/workflows/CI/badge.svg?branch=master)
-[![codecov](https://codecov.io/gh/rennokki/rating/branch/master/graph/badge.svg)](https://codecov.io/gh/rennokki/rating/branch/master)
+[![codecov](https://codecov.io/gh/renoki-co/rating/branch/master/graph/badge.svg)](https://codecov.io/gh/renoki-co/rating/branch/master)
 [![StyleCI](https://github.styleci.io/repos/142049701/shield?branch=master)](https://github.styleci.io/repos/141194551)
 [![Latest Stable Version](https://poser.pugx.org/rennokki/rating/v/stable)](https://packagist.org/packages/rennokki/rating)
 [![Total Downloads](https://poser.pugx.org/rennokki/rating/downloads)](https://packagist.org/packages/rennokki/rating)
