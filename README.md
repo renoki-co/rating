@@ -1,7 +1,3 @@
-# Laravel Eloquent Rating
-
-Laravel Eloquent Rating allows you to assign ratings to any model.
-
 ![CI](https://github.com/renoki-co/rating/workflows/CI/badge.svg?branch=master)
 [![codecov](https://codecov.io/gh/rennokki/rating/branch/master/graph/badge.svg)](https://codecov.io/gh/rennokki/rating/branch/master)
 [![StyleCI](https://github.styleci.io/repos/142049701/shield?branch=master)](https://github.styleci.io/repos/141194551)
@@ -9,6 +5,10 @@ Laravel Eloquent Rating allows you to assign ratings to any model.
 [![Total Downloads](https://poser.pugx.org/rennokki/rating/downloads)](https://packagist.org/packages/rennokki/rating)
 [![Monthly Downloads](https://poser.pugx.org/rennokki/rating/d/monthly)](https://packagist.org/packages/rennokki/rating)
 [![License](https://poser.pugx.org/rennokki/rating/license)](https://packagist.org/packages/rennokki/rating)
+
+# Laravel Eloquent Rating
+
+Laravel Eloquent Rating allows you to assign ratings to any model.
 
 # Installation
 
