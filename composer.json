@@ -11,12 +11,13 @@
         "star",
         "system"
     ],
-    "homepage": "https://github.com/rennokki/rating",
+    "homepage": "https://github.com/renoki-co/rating",
     "license": "MIT",
     "authors": [
         {
             "name": "Alex Renoki",
-            "homepage": "https://twitter.com/rennokki",
+            "email": "alex@renoki.org",
+            "homepage": "https://github.com/rennokki",
             "role": "Developer"
         }
     ],
