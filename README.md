@@ -1,3 +1,6 @@
+Laravel Eloquent Rating
+=======================
+
 ![CI](https://github.com/renoki-co/rating/workflows/CI/badge.svg?branch=master)
 [![codecov](https://codecov.io/gh/renoki-co/rating/branch/master/graph/badge.svg)](https://codecov.io/gh/renoki-co/rating/branch/master)
 [![StyleCI](https://github.styleci.io/repos/142049701/shield?branch=master)](https://github.styleci.io/repos/141194551)
@@ -6,22 +9,14 @@
 [![Monthly Downloads](https://poser.pugx.org/rennokki/rating/d/monthly)](https://packagist.org/packages/rennokki/rating)
 [![License](https://poser.pugx.org/rennokki/rating/license)](https://packagist.org/packages/rennokki/rating)
 
-# Laravel Eloquent Rating
+Laravel Eloquent Rating allows you to assign ratings to any model, just like any other review based on stars.
 
-Laravel Eloquent Rating allows you to assign ratings to any model.
-
-# Installation
+## 🚀 Installation
 
 Install the package:
 
 ```bash
 $ composer require rennokki/rating
-```
-
-If your Laravel version does not support package discovery, add this line in the `providers` array in your `config/app.php` file:
-
-```php
-Rennokki\Rating\RatingServiceProvider::class,
 ```
 
 Publish the config file & migration files:
@@ -35,8 +30,6 @@ Migrate the database:
 ```bash
 $ php artisan migrate
 ```
-
-# Preparing the Model
 
 To allow a model to rate other models, it should use the `CanRate` trait and implement the  `Rater` contract.
 
@@ -77,7 +70,7 @@ class User extends Model implements Rating
 }
 ```
 
-# Usage
+## 🙌 Usage
 
 To rate other models, simply call `rate()` method:
 
@@ -134,19 +127,25 @@ $user->ratings()->get(); // Users that this user has rated
 $user->ratings(Page::class)->get(); // Pages that this user has rated
 ```
 
-## Contributing
+## 🐛 Testing
+
+``` bash
+vendor/bin/phpunit
+```
+
+## 🤝 Contributing
 
 Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
 
-## Security
+## 🔒  Security
 
 If you discover any security related issues, please email alex@renoki.org instead of using the issue tracker.
 
-## Credits
+## 🎉 Credits
 
 - [Alex Renoki](https://github.com/rennokki)
 - [All Contributors](../../contributors)
 
-## License
+## 📄 License
 
 The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
