@@ -25,17 +25,19 @@ Install the package:
 $ composer require rennokki/rating
 ```
 
-Publish the config file & migration files:
+Publish the config:
 
 ```bash
-$ php artisan vendor:publish
+$ php artisan vendor:publish --provider="Rennokki\Rating\RatingServiceProvider" --tag="config"
 ```
 
-Migrate the database:
+Publish the migrations:
 
 ```bash
-$ php artisan migrate
+$ php artisan vendor:publish --provider="Rennokki\Rating\RatingServiceProvider" --tag="migrations"
 ```
+
+## Preparing the model
 
 To allow a model to rate other models, it should use the `CanRate` trait and implement the  `Rater` contract.
 
@@ -72,7 +74,8 @@ use Rennokki\Rating\Contracts\Rating;
 class User extends Model implements Rating
 {
     use Rate;
-    ...
+
+    //
 }
 ```
 
