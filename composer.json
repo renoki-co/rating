@@ -22,7 +22,7 @@
         }
     ],
     "require": {
-        "laravel/framework": "^7.30.2|^8.22.1"
+        "laravel/framework": "^7.30|^8.23"
     },
     "require-dev": {
         "laravel/legacy-factories": "^1.1",
