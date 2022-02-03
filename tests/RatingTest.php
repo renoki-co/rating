@@ -13,7 +13,7 @@ class RatingTest extends TestCase
     protected $page;
     protected $simplePage;
 
-    public function setUp(): void
+    protected function setUp(): void
     {
         parent::setUp();
 
