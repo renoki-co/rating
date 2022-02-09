@@ -22,8 +22,8 @@
         }
     ],
     "require": {
-        "illuminate/database": "^8.23|^9.0",
-        "illuminate/support": "^8.23|^9.0"
+        "illuminate/database": "^8.83|^9.0.1",
+        "illuminate/support": "^8.83|^9.0.1"
     },
     "require-dev": {
         "laravel/legacy-factories": "^1.3",
