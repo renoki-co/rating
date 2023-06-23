@@ -1,5 +1,5 @@
 {
-    "name": "rennokki/rating",
+    "name": "LeoMachado94/rating",
     "description": "Laravel Eloquent Rating allows you to assign ratings to any model.",
     "keywords": [
         "eloquent",
@@ -11,13 +11,13 @@
         "star",
         "system"
     ],
-    "homepage": "https://github.com/renoki-co/rating",
+    "homepage": "https://github.com/LeoMachado94/rating",
     "license": "Apache-2.0",
     "authors": [
         {
-            "name": "Alex Renoki",
-            "email": "alex@renoki.org",
-            "homepage": "https://github.com/rennokki",
+            "name": "Leonardo Machado Mengue",
+            "email": "leo94.machado@gmail.com",
+            "homepage": "https://github.com/LeoMachado94",
             "role": "Developer"
         }
     ],
